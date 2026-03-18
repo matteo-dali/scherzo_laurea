@@ -8,7 +8,6 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background:#fff; overflow:hidden; }
 
-/* ══ FASE 1 — BITCOIN ══ */
 #phase1 {
   position:fixed; inset:0; background:#fff;
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -34,15 +33,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .prog-msg { font-size:12px; color:#aaa; margin-top:8px; text-align:center; }
 .ssl-badge { display:flex; align-items:center; gap:6px; font-size:12px; color:#aaa; margin-top:20px; }
 
-/* ══ GLITCH ══ */
 #glitch-overlay { position:fixed; inset:0; z-index:200; pointer-events:none; display:none; }
 .gbar { position:absolute; left:0; right:0; height:3px; }
 .gblk { position:absolute; background:#000; opacity:0.75; }
 
-/* ══ MATRIX CANVAS ══ */
 #mc { position:fixed; inset:0; width:100%; height:100%; z-index:1; display:none; }
 
-/* ══ FASE 2 — POPUP ══ */
 #phase2 { position:fixed; inset:0; z-index:50; display:none; }
 
 .popup {
@@ -50,42 +46,20 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   border:2px solid; min-width:210px; max-width:290px;
   box-shadow:4px 4px 0 rgba(0,0,0,0.6); font-size:11px;
 }
-.pbar {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:4px 8px; font-weight:bold; font-size:11px;
-}
-.pbar .x {
-  background:#c0c0c0; border:1px outset #fff; width:16px; height:14px;
-  display:flex; align-items:center; justify-content:center;
-  font-size:10px; cursor:pointer; color:#000; flex-shrink:0;
-}
+.pbar { display:flex; align-items:center; justify-content:space-between; padding:4px 8px; font-weight:bold; font-size:11px; }
+.pbar .x { background:#c0c0c0; border:1px outset #fff; width:16px; height:14px; display:flex; align-items:center; justify-content:center; font-size:10px; cursor:pointer; color:#000; flex-shrink:0; }
 .pbody { padding:10px 12px; line-height:1.5; }
 .pbody b { display:block; margin-bottom:4px; font-size:12px; }
 .pbtn { display:inline-block; margin-top:8px; padding:3px 12px; border:2px outset #fff; cursor:pointer; font-size:11px; font-weight:bold; }
 
-.pw  { background:#fffbe6; border-color:#ffcc00; color:#333; }
-.pw  .pbar { background:#ffcc00; color:#000; }
-.pw  .pbtn { background:#ffcc00; color:#000; }
-.pv  { background:#1a001a; border-color:#ff00ff; color:#ff00ff; }
-.pv  .pbar { background:#ff00ff; color:#000; }
-.pv  .pbtn { background:#ff00ff; color:#000; }
-.pe  { background:#fff0f0; border-color:#cc0000; color:#cc0000; }
-.pe  .pbar { background:#cc0000; color:#fff; }
-.pe  .pbtn { background:#cc0000; color:#fff; }
-.pa  { background:#e8f4ff; border-color:#0066cc; color:#003366; }
-.pa  .pbar { background:#0066cc; color:#fff; }
-.pa  .pbtn { background:#0066cc; color:#fff; }
-.pf  { background:#e8ffe8; border-color:#009900; color:#003300; }
-.pf  .pbar { background:#009900; color:#fff; }
-.pf  .pbtn { background:#009900; color:#fff; }
-.pk  { background:#1a0a00; border-color:#ff6600; color:#ff9900; }
-.pk  .pbar { background:#ff6600; color:#fff; }
-.pk  .pbtn { background:#ff6600; color:#fff; }
-.pb  { background:#000a1a; border-color:#00ccff; color:#00ccff; }
-.pb  .pbar { background:#00ccff; color:#000; }
-.pb  .pbtn { background:#00ccff; color:#000; }
+.pw  { background:#fffbe6; border-color:#ffcc00; color:#333; } .pw  .pbar { background:#ffcc00; color:#000; } .pw  .pbtn { background:#ffcc00; color:#000; }
+.pv  { background:#1a001a; border-color:#ff00ff; color:#ff00ff; } .pv  .pbar { background:#ff00ff; color:#000; } .pv  .pbtn { background:#ff00ff; color:#000; }
+.pe  { background:#fff0f0; border-color:#cc0000; color:#cc0000; } .pe  .pbar { background:#cc0000; color:#fff; } .pe  .pbtn { background:#cc0000; color:#fff; }
+.pa  { background:#e8f4ff; border-color:#0066cc; color:#003366; } .pa  .pbar { background:#0066cc; color:#fff; } .pa  .pbtn { background:#0066cc; color:#fff; }
+.pf  { background:#e8ffe8; border-color:#009900; color:#003300; } .pf  .pbar { background:#009900; color:#fff; } .pf  .pbtn { background:#009900; color:#fff; }
+.pk  { background:#1a0a00; border-color:#ff6600; color:#ff9900; } .pk  .pbar { background:#ff6600; color:#fff; } .pk  .pbtn { background:#ff6600; color:#fff; }
+.pb  { background:#000a1a; border-color:#00ccff; color:#00ccff; } .pb  .pbar { background:#00ccff; color:#000; } .pb  .pbtn { background:#00ccff; color:#000; }
 
-/* ══ BOTTONE CHIUDI TUTTO ══ */
 #close-all-btn {
   position:fixed; bottom:50%; left:50%; transform:translateX(-50%);
   z-index:90; display:none;
@@ -96,54 +70,23 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   box-shadow: 0 0 50px #ff0000, 0 0 80px #cc0000;
   animation: btnPulse 0.5s step-end infinite;
 }
-@keyframes btnPulse {
-  0%  { background:#cc0000; border-color:#ff4444; }
-  50% { background:#ff0000; border-color:#ffffff; }
-}
+@keyframes btnPulse { 0%{background:#cc0000;border-color:#ff4444;} 50%{background:#ff0000;border-color:#ffffff;} }
 
-/* ══ JUMPSCARE ══ */
 #jumpscare {
-  position:fixed; inset:0; z-index:65;
-  display:none; align-items:center; justify-content:center;
-  background:#000;
-  animation:sirenBg 0.4s step-end infinite;
+  position:fixed; inset:0; z-index:65; display:none; align-items:center; justify-content:center;
+  background:#000; animation:sirenBg 0.4s step-end infinite;
 }
-@keyframes sirenBg {
-  0%   { background:#000; }
-  50%  { background:#1a0000; }
-}
-#jumpscare .skull {
-  font-size:38vw; line-height:1;
-  animation:skullBlink 0.35s step-end infinite;
-  user-select:none;
-  filter: drop-shadow(0 0 40px #ff0000);
-}
-@keyframes skullBlink {
-  0%   { opacity:1;    color:#ff0000; }
-  50%  { opacity:0.15; color:#ff4444; }
-}
-#jumpscare .siren-text {
-  position:absolute; bottom:8%;
-  font-family:'Courier New',monospace; font-size:3vw; font-weight:bold;
-  color:#ff0000; letter-spacing:6px; text-transform:uppercase;
-  animation:textBlink 0.4s step-end infinite;
-}
+@keyframes sirenBg { 0%{background:#000;} 50%{background:#1a0000;} }
+#jumpscare .skull { font-size:38vw; line-height:1; animation:skullBlink 0.35s step-end infinite; user-select:none; filter:drop-shadow(0 0 40px #ff0000); }
+@keyframes skullBlink { 0%{opacity:1;color:#ff0000;} 50%{opacity:0.15;color:#ff4444;} }
+#jumpscare .siren-text { position:absolute; bottom:8%; font-family:'Courier New',monospace; font-size:3vw; font-weight:bold; color:#ff0000; letter-spacing:6px; text-transform:uppercase; animation:textBlink 0.4s step-end infinite; }
 @keyframes textBlink { 0%{opacity:1;} 50%{opacity:0;} }
 
-/* ══ FASE 3 ══ */
-#phase3 {
-  position:fixed; inset:0; z-index:70;
-  display:none; align-items:center; justify-content:center; padding:20px;
-}
-#phase3 .box {
-  border:1px solid #00ff41; padding:24px; background:rgba(0,0,0,0.92);
-  max-width:600px; width:100%; font-family:'Courier New',monospace; color:#00ff41;
-}
+#phase3 { position:fixed; inset:0; z-index:70; display:none; align-items:center; justify-content:center; padding:20px; }
+#phase3 .box { border:1px solid #00ff41; padding:24px; background:rgba(0,0,0,0.92); max-width:600px; width:100%; font-family:'Courier New',monospace; color:#00ff41; }
 #phase3 .ttl  { font-size:23px; color:#ff3333; margin-bottom:18px; letter-spacing:2px; text-transform:uppercase; }
 #phase3 .log  { font-size:21px; color:#00aa2a; line-height:1.9; height:360px; overflow-y:auto; margin-bottom:18px; }
-#phase3 .log .hi   { color:#00ff41; }
-#phase3 .log .warn { color:#ffaa00; }
-#phase3 .log .err  { color:#ff4444; }
+#phase3 .log .hi { color:#00ff41; } #phase3 .log .warn { color:#ffaa00; } #phase3 .log .err { color:#ff4444; }
 #phase3 .blbl { font-size:21px; margin-bottom:6px; color:#00cc33; }
 #phase3 .bwrap{ border:1px solid #00aa2a; height:18px; background:#001200; margin-bottom:6px; }
 #phase3 .bfill{ height:100%; background:#00ff41; width:0%; transition:width 0.1s linear; }
@@ -152,23 +95,46 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 @keyframes blink { 50%{opacity:0;} }
 
 /* ══ FASE 4 ══ */
-#phase4 {
-  position:fixed; inset:0; z-index:80;
-  display:none; align-items:center; justify-content:center; padding:20px;
-}
+#phase4 { position:fixed; inset:0; z-index:80; display:none; align-items:center; justify-content:center; padding:20px; }
 #phase4 .box {
   border:1px solid #00ff41; padding:36px 28px; background:rgba(0,0,0,0.93);
   max-width:560px; width:100%; font-family:'Courier New',monospace; color:#00ff41; text-align:center;
 }
-#phase4 .emo  { font-size:61px; margin-bottom:14px; }
 #phase4 h2    { font-size:27px; letter-spacing:4px; margin-bottom:12px; }
 #phase4 .sub  { font-size:19px; color:#00cc33; line-height:1.8; margin-bottom:18px; }
 #phase4 .nome { font-size:27px; color:#ffff00; letter-spacing:3px; margin:14px 0 6px; font-weight:bold; }
 #phase4 .voto { font-size:20px; color:#00ff41; margin-bottom:16px; }
 #phase4 .extra{ font-size:17px; color:#00aa2a; line-height:1.9; }
+
+/* cappello + video reveal */
+#phase4 .reveal-wrap {
+  position:relative; width:260px; height:260px;
+  margin:0 auto 20px;
+}
+#phase4 .cap {
+  position:absolute; inset:0; z-index:2;
+  font-size:130px; line-height:1;
+  display:flex; align-items:center; justify-content:center;
+  transition: font-size 0.7s ease, opacity 0.6s ease;
+  pointer-events:none;
+}
+#phase4 .cap.exploded { font-size:280px; opacity:0; }
+#phase4 .sium-wrap {
+  position:absolute; inset:0; z-index:1;
+  overflow:hidden; border-radius:12px;
+  display:flex; align-items:center; justify-content:center;
+}
+#phase4 #sium-video {
+  width:100%; height:100%; object-fit:cover;
+  border:2px solid #00ff41; border-radius:12px;
+  opacity:0; transition:opacity 0.4s ease 0.5s;
+}
+#phase4 #sium-video.visible { opacity:1; }
 </style>
 </head>
 <body>
+
+<audio id="tetris-audio" src="tetris.mp3" loop preload="auto"></audio>
 
 <!-- ══ FASE 1 ══ -->
 <div id="phase1">
@@ -193,19 +159,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   <div class="ssl-badge">🔒 Connessione cifrata SSL • 256-bit</div>
 </div>
 
-<!-- ══ GLITCH ══ -->
 <div id="glitch-overlay"></div>
-
-<!-- ══ MATRIX CANVAS ══ -->
 <canvas id="mc"></canvas>
-
-<!-- ══ FASE 2 ══ -->
 <div id="phase2"></div>
-
-<!-- ══ BOTTONE CHIUDI TUTTO ══ -->
 <button id="close-all-btn" onclick="triggerJumpscare()">⛔ CLICCA PER CHIUDERE TUTTO</button>
 
-<!-- ══ JUMPSCARE ══ -->
 <div id="jumpscare">
   <div class="skull">💀</div>
   <div class="siren-text">⚠ SISTEMA COMPROMESSO ⚠</div>
@@ -225,10 +183,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <!-- ══ FASE 4 ══ -->
 <div id="phase4">
   <div class="box">
-    <div class="emo">🎓</div>
+    <!-- cappello che esplode, sotto appare Ronaldo -->
+    <div class="reveal-wrap">
+      <div class="cap" id="cap">🎓</div>
+      <div class="sium-wrap">
+        <!-- ✏️ rinomina il tuo file se necessario -->
+        <video id="sium-video" src="sium.mp4" muted playsinline></video>
+      </div>
+    </div>
     <h2>GRAZIE</h2>
     <div class="sub">Nessun virus. Nessun malware.<br>Solo un laureando con troppo tempo libero.</div>
-    <!-- ✏️ MODIFICA QUI -->
     <div class="nome">Matteo</div>
     <div class="voto">si è laureato🎉 (speriamo con 104)</div>
     <div class="extra">Grazie a tutti per esserci stati in questo percorso!</div>
@@ -238,13 +202,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 <script>
 /* ══ AUDIO ══ */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const tetrisAudio = document.getElementById('tetris-audio');
 
 function playSiren(durationMs) {
-  // a questo punto l'utente ha appena cliccato, il contesto è sbloccato
   audioCtx.resume().then(() => {
     try {
       const endTime = audioCtx.currentTime + durationMs / 1000;
-
       const osc = audioCtx.createOscillator();
       const gain = audioCtx.createGain();
       const dist = audioCtx.createWaveShaper();
@@ -265,7 +228,6 @@ function playSiren(durationMs) {
         t += 0.9;
       }
       osc.start(audioCtx.currentTime); osc.stop(endTime);
-
       const osc2 = audioCtx.createOscillator();
       const gain2 = audioCtx.createGain();
       osc2.connect(gain2); gain2.connect(audioCtx.destination);
@@ -355,14 +317,13 @@ const POPUP_TEMPLATES = [
   { cls:'pa', title:'🎁 Amazon Gift Card',    bold:'CARTA REGALO DA €500',           body:'Come cliente fedele hai vinto<br>una gift card Amazon. Riscatta!',             btn:'Riscatta ora' },
   { cls:'pe', title:'☢ SYSTEM MELTDOWN',      bold:'TEMPERATURA CPU: 127°C',         body:'Il tuo processore sta per<br>bruciarsi. Installa CoolMaster Pro!',             btn:'SALVA IL PC' },
 ];
-
 const POSITIONS = [
-  {top:'5%',  left:'1%'},  {top:'2%',  left:'20%'}, {top:'8%',  right:'5%'},
-  {top:'25%', left:'10%'}, {top:'28%', left:'29%'}, {top:'41%', right:'9%'},
-  {top:'33%', left:'3%'},  {top:'50%', left:'30%'}, {top:'50%', right:'1%'},
-  {top:'72%', left:'4%'},  {top:'82%', left:'45%'}, {top:'72%', right:'12%'},
-  {top:'72%', right:'12%'},{top:'80%', left:'20%'}, {top:'78%', right:'18%'},
-  {top:'60%', left:'20%'}, {top:'60%', right:'20%'},{top:'40%', left:'40%'}
+  {top:'5%',left:'1%'},{top:'2%',left:'20%'},{top:'8%',right:'5%'},
+  {top:'25%',left:'10%'},{top:'28%',left:'29%'},{top:'41%',right:'9%'},
+  {top:'33%',left:'3%'},{top:'50%',left:'30%'},{top:'50%',right:'1%'},
+  {top:'72%',left:'4%'},{top:'82%',left:'45%'},{top:'72%',right:'12%'},
+  {top:'72%',right:'12%'},{top:'80%',left:'20%'},{top:'78%',right:'18%'},
+  {top:'60%',left:'20%'},{top:'60%',right:'20%'},{top:'40%',left:'40%'}
 ];
 
 function makePopup(tpl, pos) {
@@ -385,7 +346,6 @@ function makePopup(tpl, pos) {
 function startPhase2() {
   document.getElementById('phase2').style.display = 'block';
   initMatrix();
-
   const totalPopups = 20;
   for (let i = 0; i < totalPopups; i++) {
     setTimeout(() => {
@@ -401,25 +361,22 @@ function startPhase2() {
       makePopup(tpl, offsetPos);
     }, i * 220);
   }
-
-  // mostra il bottone dopo che tutti i popup sono apparsi
   setTimeout(() => {
     document.getElementById('close-all-btn').style.display = 'block';
   }, totalPopups * 220 + 800);
 }
 
-/* ══ JUMPSCARE — triggered dal bottone ══ */
+/* ══ JUMPSCARE ══ */
 let jumpscareTriggered = false;
 function triggerJumpscare() {
   if (jumpscareTriggered) return;
   jumpscareTriggered = true;
   document.getElementById('close-all-btn').style.display = 'none';
   document.getElementById('phase2').style.display = 'none';
-  const js = document.getElementById('jumpscare');
-  js.style.display = 'flex';
+  document.getElementById('jumpscare').style.display = 'flex';
   playSiren(3000);
   setTimeout(() => {
-    js.style.display = 'none';
+    document.getElementById('jumpscare').style.display = 'none';
     startPhase3();
   }, 3000);
 }
@@ -461,6 +418,9 @@ const logSteps = [
 
 function startPhase3() {
   document.getElementById('phase3').style.display = 'flex';
+  tetrisAudio.volume = 0.8;
+  tetrisAudio.play().catch(e => console.warn('Audio play error:', e));
+
   const logEl = document.getElementById('log3');
   const bfill = document.getElementById('bfill3');
   const bpct  = document.getElementById('bpct3');
@@ -494,8 +454,30 @@ function startPhase3() {
 
 /* ══ FASE 4 ══ */
 function startPhase4() {
+  tetrisAudio.pause();
+  tetrisAudio.currentTime = 0;
   document.getElementById('phase3').style.display = 'none';
   document.getElementById('phase4').style.display = 'flex';
+
+  const cap   = document.getElementById('cap');
+  const video = document.getElementById('sium-video');
+
+  // il cappello esplode verso l'esterno
+  setTimeout(() => cap.classList.add('exploded'), 400);
+
+  // il video appare da sotto — CON AUDIO (l'utente ha già interagito)
+  setTimeout(() => {
+    video.muted = false;
+    video.volume = 1.0;
+    video.play().catch(() => {
+      // fallback: se il browser blocca l'audio, almeno mostra il video muto
+      video.muted = true;
+      video.play();
+    });
+    video.classList.add('visible');
+
+    setTimeout(() => video.pause(), 5000);
+  }, 900);
 }
 </script>
 </body>
